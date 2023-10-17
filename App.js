@@ -9,6 +9,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import moment from "moment";
+
 import Task from "./components/Task";
 
 export default function App() {
@@ -27,11 +29,14 @@ export default function App() {
     setTaskItems(itemsCopy);
   };
 
+  const currentDate = moment().format("dddd, D MMMM, YYYY");
+
   return (
     <View style={styles.container}>
       {/* Today's task */}
       <View style={styles.taskWrapper}>
         <Text style={styles.sectionTitle}>Today's Tasks</Text>
+        <Text>Today is {currentDate}</Text>
 
         <View style={styles.items}>
           {/* This is where the taks will go */}
